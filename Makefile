@@ -49,4 +49,4 @@ docs: build run
 	ford $(FORD_FLAGS) project.md
 
 clean:
-	rm -rf $(OBJ)/*.o $(OBJ)/*.mod $(BIN)/main $(DOC)/html
+	rm -rf $(OBJ)/*.o $(OBJ)/*.mod $(BIN)/main* $(DOC)/*

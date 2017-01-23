@@ -1,11 +1,9 @@
-program main
+program main_ex
   use iso_fortran_env, only: wp=>real64
-  ! use square, only: fun_interf, &
-  !                 & squareFun, &
-  !                 & square_local
-  ! use external, only: squareWrapperExternal
-  use square
-  use external
+  use square, only: fun_interf, &
+                  & squareFun, &
+                  & square_local
+  use external_ex, only: squareWrapperExternal
   implicit none
 
   real(wp) :: x(5) = [1., 2., 3., 4., 5.]
@@ -62,4 +60,4 @@ contains
     return
   end subroutine squareWrapperInternal
 
-end program main
+end program main_ex

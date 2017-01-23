@@ -1,4 +1,4 @@
-docs/html
 *.o
 *.mod
 main
+main_ex

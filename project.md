@@ -7,6 +7,6 @@ graph: true
 coloured_edges: true
 ---
 
-This is a minimum example using internal functions and interfaces
+This is a minimum example using internal functions and interfaces. It is related to [FORD Issue 193](https://github.com/cmacmackin/ford/issues/193)
 
 {!README.md!}

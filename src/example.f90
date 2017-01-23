@@ -12,24 +12,13 @@ module example
 
 contains
 
-  subroutine funWrapper_WiThCaps(myfun, x, y)
-    real(wp), intent(in),   dimension(:)  :: x
-    real(wp), intent(out),  dimension(:)  :: y
-    procedure(fun_interf)                 :: myfun
+  function squareFun(x) result(y)
+    real(wp), intent(in), dimension(:)  :: x
+    real(wp),             dimension(size(x))  :: y
 
-    ! y = myfun(x)
-    y = executeFun(myfun, x)
+    y = x * x
 
     return
-  end subroutine funWrapper_WiThCaps
-
-  function executeFun(myfun, x) result(y)
-    real(wp), intent(in),   dimension(:)  :: x
-    real(wp),             dimension(size(x))  :: y
-    procedure(fun_interf)                 :: myfun
-
-    y = myfun(x)
-
-  end function executeFun
+  end function squareFun
 
 end module example

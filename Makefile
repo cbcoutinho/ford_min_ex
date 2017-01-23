@@ -32,7 +32,7 @@ run: build
 	$(BIN)/main
 
 .PHONY: docs
-docs: build
+docs: build run
 	cp README.md $(DOC)/.
 	ford $(FORD_FLAGS) $(DOC)/project.md
 	rm $(DOC)/README.md

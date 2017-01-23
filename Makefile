@@ -8,12 +8,17 @@ DOC=$(shell pwd)/docs
 # Compiler
 FF = gfortran
 FFLAGS = -Wall -std=f2008 -Wextra -fPIC -fmax-errors=1 -Wimplicit-interface
-# Debug flags:
 FFLAGS += -O0 -g -fcheck=all -fbacktrace
-
 FORD_FLAGS = -d $(SRC) -o $(DOC)/html
 
 default: docs
+
+# Dependencies of main program
+objects=$(OBJ)/example.o
+
+
+$(OBJ)/example.o: $(SRC)/example.f90
+	$(FF) $(FFLAGS) -J$(OBJ) -c -o $@ $<
 
 # Main program
 $(OBJ)/main.o: $(SRC)/main.f90 $(objects)

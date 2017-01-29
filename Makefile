@@ -9,6 +9,10 @@ DOC=$(shell pwd)/docs
 FF = gfortran
 FFLAGS = -Wall -std=f2008 -Wextra -fPIC -fmax-errors=1 -Wimplicit-interface
 FFLAGS += -O0 -g -fcheck=all -fbacktrace
+
+# Ford
+# FORD = ford
+FORD = $(HOME)/Projects/ford/ford.py
 FORD_FLAGS = -d $(SRC) -o $(DOC)
 
 default: docs
@@ -46,7 +50,7 @@ run: build
 
 .PHONY: docs
 docs: build run
-	ford $(FORD_FLAGS) project.md
+	$(FORD) $(FORD_FLAGS) project.md
 
 clean:
 	rm -rf $(OBJ)/*.o $(OBJ)/*.mod $(BIN)/main* $(DOC)/*

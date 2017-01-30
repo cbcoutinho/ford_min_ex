@@ -1,3 +1,7 @@
+# This is the script file that prepares an interactive ford session. To open up
+# the ipython interpretor, use the following command:
+#     ipython script.py -i -- project.md
+
 import ford
 
 proj_data, proj_docs, md = ford.initialize()

@@ -1,5 +1,6 @@
 # This is the script file that prepares an interactive ford session. To open up
 # the ipython interpretor, use the following command:
+#     export PYTHONPATH="$HOME/Projects/ford":$PYTHONPATH
 #     ipython script.py -i -- project.md
 
 import ford
